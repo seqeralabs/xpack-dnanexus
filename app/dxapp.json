@@ -1,0 +1,40 @@
+{
+  "name": "nf-dxapp",
+  "title": "Nextflow",
+  "summary": "Nextflow on DNAnexus",
+  "dxapi": "1.0.0",
+  "version": "0.0.1",
+  "inputSpec": [
+      { "name": "pipeline_url", "class": "string", "default": "https://github.com/nextflow-io/hello" },
+      { "name": "work_dir", "class": "string", "optional": true },
+      { "name": "resume_id", "class": "string", "optional": true },
+      { "name": "log_file", "class": "string", "optional": true },
+      { "name": "opts", "class": "string", "optional": true },
+      { "name": "args", "class": "string", "optional": true },
+      { "name": "debug", "class": "string", "optional": true },
+      { "name": "license", "class": "string", "optional": false }
+  ],
+  "outputSpec": [ ],
+  "runSpec": {
+    "file": "dxapp.sh",
+    "interpreter": "bash",
+    "execDepends": [ {"name": "openjdk-8-jre-headless", "stages": ["main"]} ],
+    "distribution": "Ubuntu",
+    "release": "16.04"
+  },
+  "access": {
+    "project": "CONTRIBUTE",
+    "network": [
+      "*"
+    ]
+  },
+  "regionalOptions": {
+    "aws:us-east-1": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_v2_x2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+	"pipeline_url": "nf-core/rnaseq",
+	"args": "-revision 1.4.2 -profile docker,test",
+	"license": "$NXF_XPACK_LICENSE"
+}
