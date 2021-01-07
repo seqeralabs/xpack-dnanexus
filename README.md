@@ -15,10 +15,10 @@ Declare in your environment the following variable with your NF-XPACK for DNAnex
 ### Launching classic NF Hello world app 
 
 
-  dx run nf-dxapp \
-    --watch \
-    --delay-workspace-destruction \
-    --input-json "$(envsubst < examples/hello.json)"
+    dx run nf-dxapp \
+      --watch \
+      --delay-workspace-destruction \
+      --input-json "$(envsubst < examples/hello.json)"
 
 The above snippet runs the Nextflow [hello](https://github.com/nextflow-io/hello) pipeline.
 
