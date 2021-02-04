@@ -14,7 +14,7 @@ main() {
     export NXF_IGNORE_RESUME_HISTORY=true
     export NXF_ANSI_LOG=false
     export NXF_EXECUTOR=dnanexus
-    export NXF_PLUGINS_DEFAULT=xpack-dnanexus@1.0.0-rc0
+    export NXF_PLUGINS_DEFAULT=xpack-dnanexus
 
     # log file name
     LOG=nextflow.log

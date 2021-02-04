@@ -1,5 +1,5 @@
 {
-	"pipeline_url": "pditommaso/rnaseq-nf",
+	"pipeline_url": "https://github.com/seqeralabs/rnaseq-nf",
 	"args": "-profile docker,dx-data",
 	"license": "$NXF_XPACK_LICENSE"
 }
