@@ -4,13 +4,13 @@ DNAnexus extension package for Nextflow (XPACK-DNANEXUS)
 
 ## Introduction 
 
-DNAnexus extension package is a plugin provided by [Seqera Labs](https://www.seqera.io/) that allows the deployment of 
-[Nextflow](https://www.nextflow.io/) pipeline on [DNAnexus](https://www.dnanexus.com/) cloud platform. 
+The DNAnexus extension package is a plugin provided by [Seqera Labs](https://www.seqera.io/) that enables the deployment of 
+[Nextflow](https://www.nextflow.io/) pipelines on the [DNAnexus](https://www.dnanexus.com/) cloud platform. 
 
-The plugin requires a license key to be uses. If you are interested in it please contact us for an evaluation 
+The plugin requires a license key to be used. If you are interested, please contact us for an evaluation 
 license at [sales@seqera.io](maiilto:sales@seqera.io).
 
-NOTE: this plugin is still in beta version, some Nextflow functionalities are limited. See below for the known 
+NOTE: The plugin is still in beta version and some Nextflow functionalities are limited. See below for the known 
 problems and limitations.  
 
 ## Requirements 
@@ -27,10 +27,10 @@ In order to deploy the execution of a Nextflow pipeline in DNAnexus you will nee
 a DNAnexus applet bundling the Nextflow runtime along the DNAnexus extension plugin and, optionally, 
 the pipeline scripts.
 
-In alternative to bundle the pipeline in the DNAnexus applet, it can be pulled from a Git repository 
-as usually done by Nextflow. 
+In alternative to bundling the pipeline in the DNAnexus applet, it can be pulled from a Git repository 
+as is usually done by Nextflow. 
 
-The `Makefile` included in this repository automate the creation of the DNAnexus applet for Nextflow 
+The `Makefile` included in this repository automates the creation of the DNAnexus applet for Nextflow 
 using the following steps: 
 
 #### 0. Login in your DNAnexus workspace 
@@ -77,7 +77,7 @@ The above command build the DNAnexus applet for Nextflow with the name `nf-dxapp
 
 #### 5. Example runs
 
-You can find below some examples of to deploy the execution of Nextflow with the applet build with the 
+You can find below some examples to deploy the execution of Nextflow with the applet build from the 
 above guide. 
 
 Declare the following environment variable with your XPACK-DNANEXUS license. 
@@ -133,14 +133,14 @@ dx ls nf-out
 
 ## Known problems and limitations
 
-* Nextflow directive [cpus](https://www.nextflow.io/docs/latest/process.html#cpus) and 
+* Nextflow directives [cpus](https://www.nextflow.io/docs/latest/process.html#cpus) and 
 [memory](https://www.nextflow.io/docs/latest/process.html#memory) are not yet supported. 
 Use the [machineType](https://www.nextflow.io/docs/latest/process.html#machinetype) to specify 
 the DNAnexus VM type depending process requirements.   
 * Nextflow resume functionality is still not working properly.
-* When the pipeline execution terminates abruptly the Nextflow log file is not upload the target project storage.
+* When the pipeline execution terminates abruptly the Nextflow log file is not uploaded the target project storage.
 * Some [Biocontainers](https://biocontainers.pro/) may not work properly.  
 
 ## Copyright 
 
-Seqera Labs, all right reserved.  
+Seqera Labs, All rights reserved.  
