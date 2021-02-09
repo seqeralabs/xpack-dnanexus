@@ -49,8 +49,8 @@ cd xpack-dnanexus
 #### 2. Create the DNAnexus bundle including the Nextflow runtime 
 
 ```
-make dx-pull-nf
-```                                                               
+make dx-pack
+```
 
 The above command creates the bundle skeleton in the directory `build/nf-dxapp`.  
 
@@ -71,7 +71,7 @@ https://documentation.dnanexus.com/developer/apps/app-metadata) for further deta
 
 ``` 
 make dx-build
-```                                              
+```
 
 The above command build the DNAnexus applet for Nextflow with the name `nf-dxapp` ready to be executed. 
 
@@ -109,18 +109,21 @@ dx cat nextflow.log
         --watch \
         --input-json "$(envsubst < examples/simple-rnaseq.json)"
     
-The above snippet the rnaseq-nf pipeline at [this link](https://github.com/seqeralabs/rnaseq-nf).
+The above snippet the rnaseq-nf pipeline at [this link](https://github.com/nextflow-io/rnaseq-nf).
 
-The `args` input field is used to specify the Nextflow command line option `-profile` that selects 
-enabling the use of Docker container and the [`dx-data`](https://github.com/seqeralabs/rnaseq-nf/blob/master/nextflow.config#L72-L76) 
-which specifies as input some (minimal) dataset hosted in a DNAnexus project.
+The `args` input field is used to specify the Nextflow command line option `-profile` that selects the `docker` profile enabling the use of Docker container.
 
-The pipeline results file will be stored in the project storage in the `nf-out/` directory. Check the content 
-with the command: 
+Note pipeline results are stored in the local `results` directory in the VM running the Nextflow app. 
+
+To save the result in the DNAnexus project storage, add to the `args` attribute in the [examples/simple-rnaseq.json](examples/simple-rnaseq.json) file, the option `--outdir dx://<YOUR PROJECT ID>:/some/output/dir`, replacing the placeholder `<YOUR PROJECT ID>` with the project id that can be found using this oneliner:
 
 ```
-dx ls nf-out 
+dx env | grep project | cut -f 2
 ```
+
+NOTE: The `dx://` pseudo-protocol schema is used by Nextflow to identify file paths 
+in the DNAnexus storage. 
+
 
 ##### Launching nf-core RNAseq pipeline 
 
@@ -130,13 +133,15 @@ dx ls nf-out
         --instance-type mem3_ssd3_x12 \
         --input-json "$(envsubst < examples/nfcore-rnaseq.json)"
 
+The above example launch shows how to run the exection of the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline using the `test` profile  
+
 
 ## Known problems and limitations
 
 * Nextflow directives [cpus](https://www.nextflow.io/docs/latest/process.html#cpus) and 
 [memory](https://www.nextflow.io/docs/latest/process.html#memory) are not yet supported. 
 Use the [machineType](https://www.nextflow.io/docs/latest/process.html#machinetype) to specify 
-the DNAnexus VM type depending process requirements.   
+the DNAnexus VM type depending process requirements.
 * Nextflow resume functionality is still not working properly.
 * When the pipeline execution terminates abruptly the Nextflow log file is not uploaded the target project storage.
 * Some [Biocontainers](https://biocontainers.pro/) may not work properly.  
