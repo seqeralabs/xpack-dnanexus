@@ -33,6 +33,8 @@ main() {
     mkdir -p .nextflow/cache/$NXF_UUID
     dx download "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID/*" -o ".nextflow/cache/$NXF_UUID" --no-progress -r -f || true
 
+    # prevent glob expansion
+    set -f
     # launch nextflow
     nextflow -trace nextflow.plugin \
           $opts \
@@ -41,6 +43,8 @@ main() {
           -resume $NXF_UUID \
           -work-dir dx://$DX_WORK \
           $args
+    # restore glob expansion
+    set +f
 
     # backup cache
     dx rm -r "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID/*" || true
