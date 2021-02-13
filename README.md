@@ -121,7 +121,7 @@ To save the result in the DNAnexus project storage, add to the `args` attribute 
 dx env | grep project | cut -f 2
 ```
 
-NOTE: The `dx://` pseudo-protocol schema is used by Nextflow to identify file paths 
+NOTE: The `dx://` pseudo-protocol is used by Nextflow to identify file paths 
 in the DNAnexus storage. 
 
 
