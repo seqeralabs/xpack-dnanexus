@@ -135,13 +135,16 @@ in the DNAnexus storage.
 
 The above example launch shows how to run the exection of the [nf-core/rnaseq](https://github.com/nf-core/rnaseq) pipeline using the `test` profile  
 
+## Latest changes  
+
+- As of version `1.0.0-beta.2` directives [cpus](https://www.nextflow.io/docs/latest/process.html#cpus), [memory](https://www.nextflow.io/docs/latest/process.html#memory), [disk](https://www.nextflow.io/docs/latest/process.html#disk) and [accelerator](https://www.nextflow.io/docs/latest/process.html#accelerator)
+  are supported. When specified Nextflow look up for a machine type able to 
+  satisfy the requested resources. The `machineType` directive has in any case 
+  precedence, when specified any `cpus`, `memory`, `disk` and `accelerator`
+  is ignored. 
 
 ## Known problems and limitations
 
-* Nextflow directives [cpus](https://www.nextflow.io/docs/latest/process.html#cpus) and 
-[memory](https://www.nextflow.io/docs/latest/process.html#memory) are not yet supported. 
-Use the [machineType](https://www.nextflow.io/docs/latest/process.html#machinetype) to specify 
-the DNAnexus VM type depending process requirements.
 * Nextflow resume functionality is still not working properly.
 * When the pipeline execution terminates abruptly the Nextflow log file is not uploaded the target project storage.
 * Some [Biocontainers](https://biocontainers.pro/) may not work properly.  
