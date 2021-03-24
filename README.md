@@ -7,11 +7,9 @@ DNAnexus extension package for Nextflow (XPACK-DNANEXUS)
 The DNAnexus extension package is a plugin provided by [Seqera Labs](https://www.seqera.io/) that enables the deployment of 
 [Nextflow](https://www.nextflow.io/) pipelines on the [DNAnexus](https://www.dnanexus.com/) cloud platform. 
 
-The plugin requires a license key to be used. If you are interested, please contact us for an evaluation 
-license at [sales@seqera.io](maiilto:sales@seqera.io).
+The plugin requires a license key to be used. If you are interested, please contact us for an evaluation license at [sales@seqera.io](maiilto:sales@seqera.io).
 
-NOTE: The plugin is still in beta version and some Nextflow functionalities are limited. See below for the known 
-problems and limitations.  
+NOTE: The plugin is still in beta version and some Nextflow functionalities are limited. See below for the known problems and limitations.  
 
 ## Requirements 
 
