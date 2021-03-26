@@ -36,14 +36,62 @@
   },
   "openSource": false,
   "inputSpec": [
-      { "name": "pipeline_url", "class": "string", "default": "https://github.com/nextflow-io/hello" },
-      { "name": "work_dir", "class": "string", "optional": true },
-      { "name": "resume_id", "class": "string", "optional": true },
-      { "name": "log_file", "class": "string", "optional": true },
-      { "name": "opts", "class": "string", "optional": true },
-      { "name": "args", "class": "string", "optional": true },
-      { "name": "debug", "class": "string", "optional": true },
-      { "name": "license", "class": "string", "optional": false }
+      {
+        "name": "pipeline_url",
+        "class": "string",
+        "label": "Pipeline URL",
+        "help": "The Git repository of the pipeline project to be executed.",
+        "default": "https://github.com/nextflow-io/hello"
+      },
+      {
+        "name": "work_dir",
+        "class": "string",
+        "label": "Pipeline work directory",
+        "help": "The work directory used by Nextflow for scratch data. If provided it must be a DNAnexus storage path starting with 'dx://' protocol prefix",
+        "optional": true
+      },
+      {
+        "name": "resume_id",
+        "class": "string",
+        "label": "Resume ID",
+        "help": "The Nextflow session ID or resume a pipeline execution.",
+        "optional": true
+      },
+      {
+        "name": "log_file",
+        "class": "string",
+        "label": "Log file path",
+        "help": "A DNAnexus storage file where the Nextflow execution log should be saved.",
+        "optional": true
+      },
+      {
+        "name": "opts",
+        "class": "string",
+        "label": "Nextflow options",
+        "help": "Nextflow command line options",
+        "optional": true
+      },
+      {
+        "name": "args",
+        "class": "string",
+        "label": "Nextflow run arguments & pipeline parameters",
+        "help": "Provide Nextflow run arguments & pipeline parameters using ",
+        "optional": true
+      },
+      {
+        "name": "debug",
+        "class": "string",
+        "label": "Debug mode",
+        "help": "Enable launcher script debug mode setting this field to 'true'",
+        "optional": true
+      },
+      {
+        "name": "license",
+        "class": "string",
+        "label": "Activation license",
+        "help": "The activation license to enable Nextflow deployment for DNAnexus.",
+        "optional": false
+      }
   ],
   "outputSpec": [ ],
   "runSpec": {
