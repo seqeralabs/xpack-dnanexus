@@ -1,12 +1,38 @@
 {
   "name": "nextflow-app",
   "title": "Nextflow",
-  "summary": "Nextflow on DNAnexus",
+  "summary": "Nextflow for DNAnexus",
   "dxapi": "1.0.0",
   "version": "1.0.0-beta.2",
   "details": {
     "contactEmail": "info@seqera.io",
-    "citation": "doi:10.1038/nbt.3820"
+    "citation": "doi:10.1038/nbt.3820",
+    "upstreamProjects": [
+      {
+        "name": "Nextflow",
+        "repoUrl": "https://github.com/nextflow-io/nextflow",
+        "version": "21.03.0-edge",
+        "license": "Apache 2.0",
+        "licenseUrl": "https://github.com/nextflow-io/nextflow/blob/master/COPYING",
+        "author": "Paolo Di Tommaso, et al."
+      },
+      {
+        "name": "Groovy",
+        "repoUrl": "https://github.com/apache/groovy",
+        "version": "3.0.7",
+        "license": "Apache 2.0",
+        "licenseUrl": "https://github.com/apache/groovy/blob/master/LICENSE",
+        "author": "Groovy community"
+      },
+      {
+        "name": "Xpack-dnanexus",
+        "repoUrl": "https://github.com/seqeralabs/xpack-dnanexus",
+        "version": "1.0.0-beta.2",
+        "license": "Proprietary",
+        "author": "Paolo Di Tommaso, et al."
+      }
+    ],
+    "whatsNew": "* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
   },
   "openSource": false,
   "inputSpec": [
