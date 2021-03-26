@@ -1,15 +1,22 @@
-# Nextflow App for DNAnexus 
+# Nextflow for DNAnexus Platform
 
-This application allows the deployment of Nextflow 
-pipelines on DNAnexus cloud platform. 
+## What is Nextflow?
 
-The app uses an extension plugin for the [Nextflow](https://www.nextflow.io/) 
-runtime implementing the support DNAnexus cloud platform which requires 
-an activation license.  
+Nextflow is workflow manager that enables scalable and reproducible scientific workflows using software containers.
+Learn more at https://nextflow.io
 
-Please contact [Seqera Labs](https://www.seqera.io/) for an evaluation license 
-at [sales@seqera.io](maiilto:sales@seqera.io) or for more information.
+## What does this app do?
 
+This app allows you to deploy Nextlow pipelines on DNAnexus cloud.
+
+## What are the input files?
+
+You need to provide the URL of Git repository where a Nextflow pipeline project is stored 
+and any input data as expected by the chosen pipeline project. 
+
+## What are the output files?
+
+This depends on the pipeline project executed. 
 
 ### Input parameters
 
