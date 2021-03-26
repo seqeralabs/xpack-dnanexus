@@ -1,7 +1,7 @@
 {
   "name": "nextflow-app",
   "title": "Nextflow",
-  "summary": "Nextflow for DNAnexus",
+  "summary": "Runs Nextflow pipelines on DNAnexus",
   "dxapi": "1.0.0",
   "version": "1.0.0-beta.2",
   "details": {
