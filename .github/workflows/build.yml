@@ -12,7 +12,7 @@ jobs:
       - name: Install dxpy and other dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y apt-transport-https openssh-server python3 python3-pip python3-venv
+          sudo apt-get install -y apt-transport-https openssh-server python3 python3-pip python3-venv make
           pip3 install setuptools wheel
           pip3 install dxpy
       - name: Run tests
@@ -24,5 +24,5 @@ jobs:
           export PATH="$PATH:$HOME/.local/bin"
           dx login --noprojects --token $AUTH_TOKEN
           dx select 'Nextflow App'
-          dx whoami
+          make dx-pack dx-build
           dx run nextflow-app --watch -y -ilicense=$NXF_XPACK_LICENSE
