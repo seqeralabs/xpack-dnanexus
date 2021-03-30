@@ -11,7 +11,7 @@ This app allows you to deploy Nextflow pipelines on the DNAnexus cloud.
 
 ## What are the input files?
 
-You need to provide the URL of Git repository where a Nextflow pipeline project is stored 
+You need to provide the URL of the Git repository where a Nextflow pipeline project is stored 
 and any input data as expected by the chosen pipeline project. 
 
 ## What are the output files?
