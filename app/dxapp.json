@@ -47,42 +47,42 @@
         "name": "work_dir",
         "class": "string",
         "label": "Pipeline work directory",
-        "help": "The work directory used by Nextflow for scratch data. If provided it must be a DNAnexus storage path starting with 'dx://' protocol prefix",
+        "help": "The work directory used by Nextflow for scratch data. If provided it must be a DNAnexus storage path starting with 'dx://' protocol prefix, , for example dx://PROJECT-0123456789:/some/work/dir (optional).",
         "optional": true
       },
       {
         "name": "resume_id",
         "class": "string",
         "label": "Resume ID",
-        "help": "The Nextflow session ID or resume a pipeline execution.",
+        "help": "The Nextflow session ID or resume a pipeline execution (optional).",
         "optional": true
       },
       {
         "name": "log_file",
         "class": "string",
         "label": "Log file path",
-        "help": "A DNAnexus storage file where the Nextflow execution log should be saved.",
+        "help": "A DNAnexus storage file where the Nextflow execution log should be saved (optional).",
         "optional": true
       },
       {
         "name": "opts",
         "class": "string",
         "label": "Nextflow options",
-        "help": "Nextflow command line options",
+        "help": "Nextflow command line options (optional).",
         "optional": true
       },
       {
         "name": "args",
         "class": "string",
         "label": "Nextflow run arguments & pipeline parameters",
-        "help": "Provide Nextflow run arguments & pipeline parameters using ",
+        "help": "Provide Nextflow run arguments & pipeline parameters using (optional).",
         "optional": true
       },
       {
         "name": "debug",
         "class": "string",
         "label": "Debug mode",
-        "help": "Enable launcher script debug mode setting this field to 'true'",
+        "help": "Enable launcher script debug mode by setting this field to 'true' (optional).",
         "optional": true
       },
       {
