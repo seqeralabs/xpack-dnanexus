@@ -6,7 +6,7 @@
   "version": "1.0.0-beta.2",
   "details": {
     "contactEmail": "info@seqera.io",
-    "citation": "doi:10.1038/nbt.3820",
+    "citations": "doi:10.1038/nbt.3820",
     "upstreamProjects": [
       {
         "name": "Nextflow",
