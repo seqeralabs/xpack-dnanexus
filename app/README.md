@@ -1,21 +1,37 @@
-# Nextflow App for DNAnexus 
+# Nextflow for DNAnexus Platform
 
-This application allows the deployment of Nextflow 
-pipelines on DNAnexus cloud platform. 
+## What is Nextflow?
 
-The app uses an extension plugin for the [Nextflow](https://www.nextflow.io/) 
-runtime implementing the support DNAnexus cloud platform which requires 
-an activation license.  
+Nextflow is a workflow manager that enables scalable and reproducible scientific workflows using software containers.
+Learn more at [https://nextflow.io](https://nextflow.io).
 
-Please contact [Seqera Labs](https://www.seqera.io/) for an evaluation license 
-at [sales@seqera.io](maiilto:sales@seqera.io) or for more information.
+## What does this app do?
 
+This app allows the deployment of Nextflow pipelines on the DNAnexus cloud, taking advantage of 
+native integration with the platform, and allowing users to manage their data analyses collaboratively 
+within the familiar DNAnexus environment.
+
+## What are the input files?
+
+You need to provide the URL of the Git repository where a Nextflow pipeline project is stored 
+and any input data as expected by the chosen pipeline project.
+
+Nextflow pipelines can access files stored in DNAnexus projects prefixing the file paths with 
+corresponding project ID, e.g. `dx://PROJECT-0123456789:/some/data/file.bam`.
+
+## What are the output files?
+
+The Nextflow app allows you to run new or existing Nextflow pipelines in the DNAnexus cloud. 
+The app output files depends on the pipeline you run.
+
+If the pipeline allows the definition of one or more output file paths, prefix them with the 
+DNAnexus project ID where the output is expected to be stored e.g. `dx://PROJECT-0123456789:/some/output`.     
 
 ### Input parameters
 
 * pipeline_url: The URL of the Git repository of the pipeline to the executed
 * work_dir: The pipeline work directory. It has to be a DNAnexus storage path e.g. dx://PROJECT-0123456789:/some/work/dir (optional)
-* resume_id: The unique ID of the Nextflow execution to be resumes (optional)
+* resume_id: The unique ID of the Nextflow execution to be resumed (optional)
 * log_file: The name of the Nextflow log file (optional)
 * opts: Nextflow runtime top options (optional)
 * args: Nextflow run options and pipeline parameters (optional)

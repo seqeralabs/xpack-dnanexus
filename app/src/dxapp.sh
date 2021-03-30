@@ -6,7 +6,7 @@ set -eo pipefail
 
 # Main entry point for this app.
 main() {
-    [[ $debug ]] && set -x && env | sort
+    [[ $debug ]] && set -x && env | grep -v LICENSE | sort
 
     export NXF_HOME=/opt/nextflow
     export NXF_UUID=${resume_id:-$(uuidgen)}
