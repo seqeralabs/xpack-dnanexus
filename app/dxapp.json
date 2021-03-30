@@ -95,7 +95,7 @@
   ],
   "outputSpec": [ ],
   "runSpec": {
-    "file": "dxapp.sh",
+    "file": "src/dxapp.sh",
     "interpreter": "bash",
     "execDepends": [ {"name": "openjdk-8-jre-headless", "stages": ["main"]} ],
     "distribution": "Ubuntu",

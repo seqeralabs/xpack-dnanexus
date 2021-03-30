@@ -15,7 +15,7 @@ dx-pack:
 
 dx-build:
     # copy dnanexus template
-	cp src/* build/nextflow/
+	cp -r app/* build/nextflow/
 	dx build build/nextflow -f
 	# info
 	echo "Run with: dx run nextflow --watch -y"
