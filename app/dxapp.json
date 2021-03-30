@@ -47,7 +47,7 @@
         "name": "work_dir",
         "class": "string",
         "label": "Pipeline work directory",
-        "help": "The work directory used by Nextflow for scratch data. If provided it must be a DNAnexus storage path starting with 'dx://' protocol prefix, , for example dx://PROJECT-0123456789:/some/work/dir (optional).",
+        "help": "The work directory used by Nextflow for scratch data. If provided it must be a DNAnexus storage path starting with 'dx://' protocol prefix, for example dx://PROJECT-0123456789:/some/work/dir (optional).",
         "optional": true
       },
       {
