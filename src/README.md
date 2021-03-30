@@ -22,7 +22,7 @@ This depends on the pipeline project executed.
 
 * pipeline_url: The URL of the Git repository of the pipeline to the executed
 * work_dir: The pipeline work directory. It has to be a DNAnexus storage path e.g. dx://PROJECT-0123456789:/some/work/dir (optional)
-* resume_id: The unique ID of the Nextflow execution to be resumes (optional)
+* resume_id: The unique ID of the Nextflow execution to be resumed (optional)
 * log_file: The name of the Nextflow log file (optional)
 * opts: Nextflow runtime top options (optional)
 * args: Nextflow run options and pipeline parameters (optional)
