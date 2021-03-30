@@ -50,7 +50,7 @@ cd xpack-dnanexus
 make dx-pack
 ```
 
-The above command creates the bundle skeleton in the directory `build/nf-dxapp`.  
+The above command creates the bundle skeleton in the directory `build/nextflow-dx`.  
 
 #### 3. Modify the app metadata 
 
@@ -71,7 +71,7 @@ https://documentation.dnanexus.com/developer/apps/app-metadata) for further deta
 make dx-build
 ```
 
-The above command build the DNAnexus applet for Nextflow with the name `nf-dxapp` ready to be executed. 
+The above command build the DNAnexus applet for Nextflow with the name `nextflow-dx` ready to be executed. 
 
 #### 5. Example runs
 
@@ -88,7 +88,7 @@ export NXF_XPACK_LICENSE=<YOUR LICENSE CONTENT>
 
 ##### Launching classic NF Hello world app 
 
-    dx run nf-dxapp \
+    dx run nextflow-dx \
       --watch \
       --input-json "$(envsubst < examples/hello.json)"
 
@@ -103,7 +103,7 @@ dx cat nextflow.log
   
 ##### Launching simple RNAseq pipeline using container execution 
 
-    dx run nf-dxapp \
+    dx run nextflow-dx \
         --watch \
         --input-json "$(envsubst < examples/simple-rnaseq.json)"
     
@@ -125,7 +125,7 @@ in the DNAnexus storage.
 
 ##### Launching nf-core RNAseq pipeline 
 
-    dx run nf-dxapp \
+    dx run nextflow-dx \
         --watch \
         --delay-workspace-destruction \
         --instance-type mem3_ssd3_x12 \
