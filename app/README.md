@@ -12,11 +12,18 @@ This app allows you to deploy Nextflow pipelines on the DNAnexus cloud.
 ## What are the input files?
 
 You need to provide the URL of the Git repository where a Nextflow pipeline project is stored 
-and any input data as expected by the chosen pipeline project. 
+and any input data as expected by the chosen pipeline project.
+
+Nextflow pipelines can access files stored in DNAnexus projects prefixing the file paths with 
+corresponding project ID, e.g. `dx://PROJECT-0123456789:/some/data/file.bam`.
 
 ## What are the output files?
 
-This depends on the pipeline project executed. 
+The Nextflow app allows you to run new or existing Nextflow pipelines in the DNAnexus cloud. 
+The app output files depends on the pipeline you run.
+
+If the pipeline allows the definition of one or more output file paths, prefix them with the 
+DNAnexus project ID where the output is expected to be stored e.g. `dx://PROJECT-0123456789:/some/output`.     
 
 ### Input parameters
 
