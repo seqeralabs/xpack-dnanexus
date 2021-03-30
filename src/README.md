@@ -7,7 +7,7 @@ Learn more at https://nextflow.io
 
 ## What does this app do?
 
-This app allows you to deploy Nextlow pipelines on DNAnexus cloud.
+This app allows you to deploy Nextflow pipelines on the DNAnexus cloud.
 
 ## What are the input files?
 
