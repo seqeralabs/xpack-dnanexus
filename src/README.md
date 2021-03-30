@@ -2,7 +2,7 @@
 
 ## What is Nextflow?
 
-Nextflow is workflow manager that enables scalable and reproducible scientific workflows using software containers.
+Nextflow is a workflow manager that enables scalable and reproducible scientific workflows using software containers.
 Learn more at https://nextflow.io
 
 ## What does this app do?
