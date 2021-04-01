@@ -9,6 +9,8 @@ The DNAnexus extension package is a plugin provided by [Seqera Labs](https://www
 
 The plugin requires a license key to be used. If you are interested, please contact us for an evaluation license at [sales@seqera.io](maiilto:sales@seqera.io).
 
+*A pre-build version of this application is available in DNAnexus platform at this link https://platform.dnanexus.com/app/nextflow-dx.*
+
 NOTE: The plugin is still in beta version and some Nextflow functionalities are limited. See below for the known problems and limitations.  
 
 ## Requirements 
@@ -50,7 +52,7 @@ cd xpack-dnanexus
 make dx-pack
 ```
 
-The above command creates the bundle skeleton in the directory `build/nextflow-dx`.  
+The above command creates the bundle skeleton in the directory `build/nextflow-app`.  
 
 #### 3. Modify the app metadata 
 
@@ -71,7 +73,7 @@ https://documentation.dnanexus.com/developer/apps/app-metadata) for further deta
 make dx-build
 ```
 
-The above command build the DNAnexus applet for Nextflow with the name `nextflow-dx` ready to be executed. 
+The above command build the DNAnexus applet for Nextflow with the name `nextflow-app` ready to be executed. 
 
 #### 5. Example runs
 
@@ -88,7 +90,7 @@ export NXF_XPACK_LICENSE=<YOUR LICENSE CONTENT>
 
 ##### Launching classic NF Hello world app 
 
-    dx run nextflow-dx \
+    dx run nextflow-app \
       --watch \
       --input-json "$(envsubst < examples/hello.json)"
 
@@ -103,7 +105,7 @@ dx cat nextflow.log
   
 ##### Launching simple RNAseq pipeline using container execution 
 
-    dx run nextflow-dx \
+    dx run nextflow-app \
         --watch \
         --input-json "$(envsubst < examples/simple-rnaseq.json)"
     
@@ -125,7 +127,7 @@ in the DNAnexus storage.
 
 ##### Launching nf-core RNAseq pipeline 
 
-    dx run nextflow-dx \
+    dx run nextflow-app \
         --watch \
         --delay-workspace-destruction \
         --instance-type mem3_ssd3_x12 \
