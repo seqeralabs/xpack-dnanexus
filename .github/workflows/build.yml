@@ -25,4 +25,4 @@ jobs:
           dx login --noprojects --token $AUTH_TOKEN
           dx select 'Nextflow App'
           make dx-pack dx-build
-          dx run nextflow-app --watch -y -ilicense=$NXF_XPACK_LICENSE
+          dx run nextflow-app --watch -y -ilicense=$NXF_XPACK_LICENSE -iargs="-with-docker"
