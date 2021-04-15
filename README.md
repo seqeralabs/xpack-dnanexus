@@ -60,7 +60,7 @@ DNAnexus app requires a file named `dxapp.json` to configure the application dep
 and parameters. 
 
 A predefined app metadata file with the settings required for the Nextflow execution 
-is available in this repository at the path [app/dxapp.json]. Modify it according your 
+is available in this repository at the path [app/dxapp.json](app/dxapp.json). Modify it according your 
 requirements. 
 
 See the [DNAnexus documentation](
