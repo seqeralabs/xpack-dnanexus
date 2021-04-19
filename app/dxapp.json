@@ -32,7 +32,7 @@
         "author": "Paolo Di Tommaso, et al."
       }
     ],
-    "whatsNew": "* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings;\nRemove unused input parameters. * 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
+    "whatsNew": "* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings; Remove unused input parameters.\n* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
   },
   "openSource": false,
   "inputSpec": [
