@@ -4,6 +4,10 @@
 #
 set -eo pipefail
 
+on_exit() {
+  [[ $DX_LOG ]] && dx close $DX_LOG -a
+}
+
 # Main entry point for this app.
 main() {
     [[ $debug ]] && set -x && env | grep -v LICENSE | sort
@@ -15,9 +19,12 @@ main() {
     export NXF_ANSI_LOG=false
     export NXF_EXECUTOR=dnanexus
     export NXF_PLUGINS_DEFAULT=xpack-dnanexus
+    export NXF_DOCKER_LEGACY=true
 
+    trap on_exit EXIT
+    
     # log file name
-    LOG=nextflow.log
+    LOG="nextflow-$(date +"%y%m%d-%H%M%S").log"
     DX_WORK=${work_dir:-$DX_WORKSPACE_ID:/scratch/}
     DX_LOG=${log_file:-$DX_PROJECT_CONTEXT_ID:$LOG}
 
@@ -27,6 +34,7 @@ main() {
     echo "============================================================="
     echo "=== NF work-dir ${DX_WORK}"
     echo "=== NF Resume ID ${NXF_UUID}"
+    echo "=== NF log file ${DX_LOG}"
     echo "============================================================="
 
     # restore cache

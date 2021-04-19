@@ -9,7 +9,7 @@ clean:
 dx-pack:
 	mkdir -p build/nextflow-dx/resources/usr/bin
 	mkdir -p build/nextflow-dx/resources/opt/nextflow
-	NXF_VER=21.03.0-edge NXF_HOME=build/nextflow-dx/resources/opt/nextflow bash -c 'curl get.nextflow.io | bash'
+	NXF_VER=21.04.1-edge NXF_HOME=build/nextflow-dx/resources/opt/nextflow bash -c 'curl get.nextflow.io | bash'
 	mv nextflow build/nextflow-dx/resources/usr/bin/nextflow
 	rm -rf build/nextflow-dx/resources/opt/nextflow/tmp
 
@@ -18,10 +18,10 @@ dx-build:
 	cp -r app/* build/nextflow-dx/
 	dx build build/nextflow-dx -f
 	# info
-	echo "Run with: dx run nextflow --watch -y"
+	echo "Run with: dx run nextflow-dx --watch -y"
 
 dx-run: 
-	dx run nextflow --watch -y
+	dx run nextflow-dx --watch -y
 
 dx-publish:
 	cp -r app/* build/nextflow-dx/

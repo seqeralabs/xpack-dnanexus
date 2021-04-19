@@ -24,5 +24,5 @@ jobs:
           export PATH="$PATH:$HOME/.local/bin"
           dx login --noprojects --token $AUTH_TOKEN
           dx select 'Nextflow App'
-          make dx-pack dx-build
-          dx run nextflow-dx --watch -y -ilicense=$NXF_XPACK_LICENSE
+          APP_ID=$(make dx-pack dx-build | grep '"id":' | awk '{ gsub(/"|}/, "", $2); print $2 }')
+          dx run $APP_ID --watch -y -ilicense=$NXF_XPACK_LICENSE -iargs="-with-docker"

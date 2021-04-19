@@ -3,7 +3,7 @@
   "title": "Nextflow for DNAnexus (beta)",
   "summary": "Runs Nextflow pipelines on DNAnexus",
   "dxapi": "1.0.0",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.2.1",
   "details": {
     "contactEmail": "info@seqera.io",
     "citations": "doi:10.1038/nbt.3820",
@@ -11,7 +11,7 @@
       {
         "name": "Nextflow",
         "repoUrl": "https://github.com/nextflow-io/nextflow",
-        "version": "21.03.0-edge",
+        "version": "21.04.1-edge",
         "license": "Apache 2.0",
         "licenseUrl": "https://github.com/nextflow-io/nextflow/blob/master/COPYING",
         "author": "Paolo Di Tommaso, et al."
@@ -32,7 +32,7 @@
         "author": "Paolo Di Tommaso, et al."
       }
     ],
-    "whatsNew": "* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
+    "whatsNew": "* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings; Remove unused input parameters.\n* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
   },
   "openSource": false,
   "inputSpec": [
@@ -44,34 +44,6 @@
         "default": "https://github.com/nextflow-io/hello"
       },
       {
-        "name": "work_dir",
-        "class": "string",
-        "label": "Pipeline work directory",
-        "help": "The work directory used by Nextflow for scratch data. If provided it must be a DNAnexus storage path starting with 'dx://' protocol prefix, for example dx://PROJECT-0123456789:/some/work/dir (optional).",
-        "optional": true
-      },
-      {
-        "name": "resume_id",
-        "class": "string",
-        "label": "Resume ID",
-        "help": "The Nextflow session ID or resume a pipeline execution (optional).",
-        "optional": true
-      },
-      {
-        "name": "log_file",
-        "class": "string",
-        "label": "Log file path",
-        "help": "A DNAnexus storage file where the Nextflow execution log should be saved (optional).",
-        "optional": true
-      },
-      {
-        "name": "opts",
-        "class": "string",
-        "label": "Nextflow options",
-        "help": "Nextflow command line options (optional).",
-        "optional": true
-      },
-      {
         "name": "args",
         "class": "string",
         "label": "Nextflow run arguments & pipeline parameters",
@@ -80,7 +52,7 @@
       },
       {
         "name": "debug",
-        "class": "string",
+        "class": "boolean",
         "label": "Debug mode",
         "help": "Enable launcher script debug mode by setting this field to 'true' (optional).",
         "optional": true
