@@ -80,7 +80,6 @@
       "*"
     ]
   },
-  "billTo": "org-seqera",
   "regionalOptions": {
     "aws:us-east-1": {
       "systemRequirements": {

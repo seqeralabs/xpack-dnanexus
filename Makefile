@@ -9,7 +9,7 @@ clean:
 dx-pack:
 	mkdir -p build/nextflow-app/resources/usr/bin
 	mkdir -p build/nextflow-app/resources/opt/nextflow
-	NXF_VER=21.04.1-edge NXF_HOME=build/nextflow-app/resources/opt/nextflow bash -c 'curl get.nextflow.io | bash'
+	NXF_VER=21.04.0 NXF_HOME=build/nextflow-app/resources/opt/nextflow bash -c 'curl get.nextflow.io | bash'
 	mv nextflow build/nextflow-app/resources/usr/bin/nextflow
 	rm -rf build/nextflow-app/resources/opt/nextflow/tmp
 

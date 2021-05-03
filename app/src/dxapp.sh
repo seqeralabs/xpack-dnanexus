@@ -5,16 +5,33 @@
 set -eo pipefail
 
 on_exit() {
-  [[ $DX_LOG ]] && dx close $DX_LOG -a
+  ret=$?
+  # upload log file
+  dx upload $LOG_NAME --path $DX_LOG --wait --brief --no-progress --parents || true
+  # backup cache
+  dx rm -r "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID/*" || true
+  dx upload ".nextflow/cache/$NXF_UUID" --path "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID" --no-progress --brief --wait -p -r || true
+  # done
+  exit $ret
+}
+
+get_lic() {
+  local str=${1#"dx://"}
+  case $str in
+    project-*)
+      dx cat $str ;;
+    *)
+    echo $str ;;
+  esac
 }
 
 # Main entry point for this app.
 main() {
-    [[ $debug ]] && set -x && env | grep -v LICENSE | sort
+    [[ $debug ]] && set -x && env | grep -v license | sort
 
     export NXF_HOME=/opt/nextflow
     export NXF_UUID=${resume_id:-$(uuidgen)}
-    export NXF_XPACK_LICENSE=${license}
+    export NXF_XPACK_LICENSE=$(get_lic $license)
     export NXF_IGNORE_RESUME_HISTORY=true
     export NXF_ANSI_LOG=false
     export NXF_EXECUTOR=dnanexus
@@ -24,12 +41,9 @@ main() {
     trap on_exit EXIT
     
     # log file name
-    LOG="nextflow-$(date +"%y%m%d-%H%M%S").log"
+    LOG_NAME="nextflow-$(date +"%y%m%d-%H%M%S").log"
     DX_WORK=${work_dir:-$DX_WORKSPACE_ID:/scratch/}
-    DX_LOG=${log_file:-$DX_PROJECT_CONTEXT_ID:$LOG}
-
-    # upload nextflow log in background
-    mkfifo $LOG; < $LOG dx upload - --path $DX_LOG --wait --brief --no-progress --parents &
+    DX_LOG=${log_file:-$DX_PROJECT_CONTEXT_ID:$LOG_NAME}
 
     echo "============================================================="
     echo "=== NF work-dir ${DX_WORK}"
@@ -39,24 +53,20 @@ main() {
 
     # restore cache
     mkdir -p .nextflow/cache/$NXF_UUID
-    dx download "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID/*" -o ".nextflow/cache/$NXF_UUID" --no-progress -r -f || true
+    dx download "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID/*" -o ".nextflow/cache/$NXF_UUID" --no-progress -r -f 2>&1 || true
 
     # prevent glob expansion
     set -f
     # launch nextflow
     nextflow -trace nextflow.plugin \
           $opts \
-          -log $LOG \
+          -log $LOG_NAME \
           run $pipeline_url \
           -resume $NXF_UUID \
           -work-dir dx://$DX_WORK \
           $args
     # restore glob expansion
     set +f
-
-    # backup cache
-    dx rm -r "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID/*" || true
-    dx upload ".nextflow/cache/$NXF_UUID" --path "$DX_PROJECT_CONTEXT_ID:/.nextflow/cache/$NXF_UUID" --no-progress --brief --wait -p -r
 }
 
 nf_task_exit() {
