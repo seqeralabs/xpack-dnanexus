@@ -15,10 +15,12 @@ on_exit() {
   exit $ret
 }
 
-get_lic() {
+dx_path() {
   local str=${1#"dx://"}
   case $str in
     project-*)
+      dx cat $str ;;
+    container-*)
       dx cat $str ;;
     *)
     echo $str ;;
@@ -31,7 +33,7 @@ main() {
 
     export NXF_HOME=/opt/nextflow
     export NXF_UUID=${resume_id:-$(uuidgen)}
-    export NXF_XPACK_LICENSE=$(get_lic $license)
+    export NXF_XPACK_LICENSE=$(dx_path $license)
     export NXF_IGNORE_RESUME_HISTORY=true
     export NXF_ANSI_LOG=false
     export NXF_EXECUTOR=dnanexus
@@ -50,6 +52,10 @@ main() {
     echo "=== NF Resume ID ${NXF_UUID}"
     echo "=== NF log file ${DX_LOG}"
     echo "============================================================="
+
+    if [[ $scm_file ]]; then
+      dx_path $scm_file > $NXF_HOME/scm
+    fi 
 
     # restore cache
     mkdir -p .nextflow/cache/$NXF_UUID
