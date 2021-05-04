@@ -3,7 +3,7 @@
   "title": "Nextflow for DNAnexus (beta)",
   "summary": "Runs Nextflow pipelines on DNAnexus",
   "dxapi": "1.0.0",
-  "version": "1.0.0-beta.2.1",
+  "version": "1.0.0-beta.3",
   "details": {
     "contactEmail": "info@seqera.io",
     "citations": "doi:10.1038/nbt.3820",
@@ -11,7 +11,7 @@
       {
         "name": "Nextflow",
         "repoUrl": "https://github.com/nextflow-io/nextflow",
-        "version": "21.04.1-edge",
+        "version": "21.04.0",
         "license": "Apache 2.0",
         "licenseUrl": "https://github.com/nextflow-io/nextflow/blob/master/COPYING",
         "author": "Paolo Di Tommaso, et al."
@@ -68,7 +68,7 @@
         "name": "license",
         "class": "string",
         "label": "Activation license",
-        "help": "The activation license to enable Nextflow deployment for DNAnexus.",
+        "help": "The activation license to enable Nextflow for DNAnexus execution. It should be provided as a DNAnexus path e.g. dx://project-12345:/some/license.txt",
         "optional": false
       }
   ],
