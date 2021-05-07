@@ -58,18 +58,18 @@
         "optional": true
       },
       {
-        "name": "debug",
-        "class": "boolean",
-        "label": "Debug mode",
-        "help": "Enable launcher script debug mode by setting this field to 'true' (optional).",
-        "optional": true
-      },
-      {
         "name": "license",
         "class": "string",
         "label": "Activation license",
         "help": "The activation license to enable Nextflow for DNAnexus execution. It should be provided as a DNAnexus path e.g. dx://project-12345:/some/license.txt",
         "optional": false
+      },
+      {
+        "name": "debug",
+        "class": "boolean",
+        "label": "Debug mode",
+        "help": "Enable launcher script debug mode by setting this field to 'true' (optional).",
+        "optional": true
       }
   ],
   "outputSpec": [ ],
