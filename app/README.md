@@ -30,7 +30,7 @@ DNAnexus project ID where the output is expected to be stored e.g. `dx://PROJECT
 ### Input parameters
 
 * pipeline_url: The URL of the Git repository of the pipeline to the executed
+* license: Your activation license string
 * args: Nextflow run options and pipeline parameters (optional)
 * scm_file: Git repository credentials file (optional)
-* license: Your activation license string
 * debug: Enable launcher script debugging mode (optional)
