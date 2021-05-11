@@ -61,7 +61,7 @@
         "name": "license",
         "class": "string",
         "label": "Activation license",
-        "help": "The activation license to enable Nextflow for DNAnexus execution. It should be provided as a DNAnexus path e.g. dx://project-12345:/some/license.txt",
+        "help": "The activation license required for the execution of Nextflow for DNAnexus. Save the license file obtained from Seqera Labs into a DNAnexus project location e.g. dx://project-12345:/some/license.txt",
         "optional": false
       },
       {
