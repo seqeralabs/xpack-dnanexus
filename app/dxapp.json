@@ -54,7 +54,7 @@
         "name": "scm_file",
         "class": "string",
         "label": "Git repository credentials file",
-        "help": "The Nextflow scm file providing the access credentials for private Git repository. It should be provided as a DNAnexus path e.g. dx:/project-12345:/some/creds.txt",
+        "help": "The Nextflow scm file providing the access credentials for private Git repository. It should be provided as a DNAnexus path e.g. dx://project-12345:/some/creds.txt. Find at the following link more details about Nextflow scm file https://www.nextflow.io/docs/latest/sharing.html#scm-configuration-file.",
         "optional": true
       },
       {
