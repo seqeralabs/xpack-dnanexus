@@ -3,7 +3,7 @@
   "title": "Nextflow for DNAnexus (beta)",
   "summary": "Runs Nextflow pipelines on DNAnexus",
   "dxapi": "1.0.0",
-  "version": "1.0.0-beta.2.1",
+  "version": "1.0.0-beta.3",
   "details": {
     "contactEmail": "info@seqera.io",
     "citations": "doi:10.1038/nbt.3820",
@@ -11,7 +11,7 @@
       {
         "name": "Nextflow",
         "repoUrl": "https://github.com/nextflow-io/nextflow",
-        "version": "21.04.1-edge",
+        "version": "21.04.0",
         "license": "Apache 2.0",
         "licenseUrl": "https://github.com/nextflow-io/nextflow/blob/master/COPYING",
         "author": "Paolo Di Tommaso, et al."
@@ -32,7 +32,7 @@
         "author": "Paolo Di Tommaso, et al."
       }
     ],
-    "whatsNew": "* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings; Remove unused input parameters.\n* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
+    "whatsNew": "* 1.0.0-beta.3: Fix output log not showing up in the project; Add support a licensing file; Add support private repos.\n* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings; Remove unused input parameters.\n* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
   },
   "openSource": false,
   "inputSpec": [
@@ -51,18 +51,25 @@
         "optional": true
       },
       {
-        "name": "debug",
-        "class": "boolean",
-        "label": "Debug mode",
-        "help": "Enable launcher script debug mode by setting this field to 'true' (optional).",
+        "name": "scm_file",
+        "class": "string",
+        "label": "Git repository credentials file",
+        "help": "The Nextflow scm file providing the access credentials for private Git repository. It should be provided as a DNAnexus path e.g. dx://project-12345:/some/creds.txt. Find at the following link more details about Nextflow scm file https://www.nextflow.io/docs/latest/sharing.html#scm-configuration-file.",
         "optional": true
       },
       {
         "name": "license",
         "class": "string",
         "label": "Activation license",
-        "help": "The activation license to enable Nextflow deployment for DNAnexus.",
+        "help": "The activation license required for the execution of Nextflow for DNAnexus. Save the license file obtained from Seqera Labs into a DNAnexus project location e.g. dx://project-12345:/some/license.txt",
         "optional": false
+      },
+      {
+        "name": "debug",
+        "class": "boolean",
+        "label": "Debug mode",
+        "help": "Enable launcher script debug mode by setting this field to 'true' (optional).",
+        "optional": true
       }
   ],
   "outputSpec": [ ],
