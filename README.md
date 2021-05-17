@@ -17,7 +17,7 @@ NOTE: The plugin is still in beta version and some Nextflow functionalities are 
 
 * DNAnexus command line tools aka dx-toolkit. See [here](https://documentation.dnanexus.com/getting-started/tutorials/cli-quickstart) 
 for details.
-* Nextflow runtime version 21.04.1-edge or later. 
+* Nextflow runtime version 21.04.0 or later. 
 * Valid license for DNAnexus extension package for Nextflow.  
 * [Make](https://www.gnu.org/software/make) tool (only for the project bundling). 
 
