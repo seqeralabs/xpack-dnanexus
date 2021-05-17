@@ -9,7 +9,7 @@ clean:
 dx-pack:
 	mkdir -p build/nextflow-dx/resources/usr/bin
 	mkdir -p build/nextflow-dx/resources/opt/nextflow
-	NXF_VER=21.04.0 NXF_HOME=build/nextflow-dx/resources/opt/nextflow bash -c 'curl get.nextflow.io | bash'
+	NXF_VER=21.04.1 NXF_HOME=build/nextflow-dx/resources/opt/nextflow bash -c 'curl get.nextflow.io | bash'
 	mv nextflow build/nextflow-dx/resources/usr/bin/nextflow
 	rm -rf build/nextflow-dx/resources/opt/nextflow/tmp
 
@@ -23,7 +23,7 @@ dx-build:
 dx-run: 
 	dx run nextflow-dx --watch -y
 
-dx-publish:
+dx-publish: dx-pack dx-build
 	cp -r app/* build/nextflow-dx/
 	dx build build/nextflow-dx -f --app --bill-to=org-seqera
 	dx add developers app-nextflow-dx org-dnanexus_tools_admin
