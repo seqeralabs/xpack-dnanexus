@@ -3,7 +3,7 @@
   "title": "Nextflow for DNAnexus (beta)",
   "summary": "Runs Nextflow pipelines on DNAnexus",
   "dxapi": "1.0.0",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "details": {
     "contactEmail": "info@seqera.io",
     "citations": "doi:10.1038/nbt.3820",
@@ -11,7 +11,7 @@
       {
         "name": "Nextflow",
         "repoUrl": "https://github.com/nextflow-io/nextflow",
-        "version": "21.04.0",
+        "version": "21.04.1",
         "license": "Apache 2.0",
         "licenseUrl": "https://github.com/nextflow-io/nextflow/blob/master/COPYING",
         "author": "Paolo Di Tommaso, et al."
@@ -32,10 +32,17 @@
         "author": "Paolo Di Tommaso, et al."
       }
     ],
-    "whatsNew": "* 1.0.0-beta.3: Fix output log not showing up in the project; Add support a licensing file; Add support private repos.\n* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings; Remove unused input parameters.\n* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
+    "whatsNew": "* 1.0.0-beta.4: Fix access allProjects with VIEW permission; Upgrade NF 21.04.1; Add support private repos.\n* 1.0.0-beta.3: Fix output log not showing up in the project; Add support a licensing file; Add support private repos.\n* 1.0.0-beta.2.1: Fix issue with Docker container CPUs settings; Remove unused input parameters.\n* 1.0.0-beta.2: First version of the Nextflow for DNAnexus"
   },
   "openSource": false,
   "inputSpec": [
+      {
+        "name": "license",
+        "class": "string",
+        "label": "Activation license",
+        "help": "The activation license required for the execution of Nextflow for DNAnexus. Save the license file obtained from Seqera Labs into a DNAnexus project location e.g. dx://project-12345:/some/license.txt",
+        "optional": false
+      },
       {
         "name": "pipeline_url",
         "class": "string",
@@ -58,13 +65,6 @@
         "optional": true
       },
       {
-        "name": "license",
-        "class": "string",
-        "label": "Activation license",
-        "help": "The activation license required for the execution of Nextflow for DNAnexus. Save the license file obtained from Seqera Labs into a DNAnexus project location e.g. dx://project-12345:/some/license.txt",
-        "optional": false
-      },
-      {
         "name": "debug",
         "class": "boolean",
         "label": "Debug mode",
@@ -83,6 +83,7 @@
   },
   "access": {
     "project": "CONTRIBUTE",
+    "allProjects": "VIEW",
     "network": [
       "*"
     ]
