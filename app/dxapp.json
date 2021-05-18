@@ -37,6 +37,13 @@
   "openSource": false,
   "inputSpec": [
       {
+        "name": "license",
+        "class": "string",
+        "label": "Activation license",
+        "help": "The activation license required for the execution of Nextflow for DNAnexus. Save the license file obtained from Seqera Labs into a DNAnexus project location e.g. dx://project-12345:/some/license.txt",
+        "optional": false
+      },
+      {
         "name": "pipeline_url",
         "class": "string",
         "label": "Pipeline URL",
@@ -56,13 +63,6 @@
         "label": "Git repository credentials file",
         "help": "The Nextflow scm file providing the access credentials for private Git repository. It should be provided as a DNAnexus path e.g. dx://project-12345:/some/creds.txt. Find at the following link more details about Nextflow scm file https://www.nextflow.io/docs/latest/sharing.html#scm-configuration-file.",
         "optional": true
-      },
-      {
-        "name": "license",
-        "class": "string",
-        "label": "Activation license",
-        "help": "The activation license required for the execution of Nextflow for DNAnexus. Save the license file obtained from Seqera Labs into a DNAnexus project location e.g. dx://project-12345:/some/license.txt",
-        "optional": false
       },
       {
         "name": "debug",
