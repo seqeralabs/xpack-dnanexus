@@ -55,10 +55,10 @@ extra:
 
 nav:
     - 'Getting started': 'getting_started.md'
+    - 'Create a custom pipeline bundle': 'create_a_custom_pipeline_bundle.md'
     - 'Launch your first pipeline': 'launch_your_first_pipeline.md'
     - 'Use the CLI': 'use_the_cli.md'
     - 'Use private Git repository': 'use_private_git_repository.md'
-    - 'Create a custom pipeline bundle': 'create_a_custom_pipeline_bundle.md'
     - 'Changelog': 'changelog.md'
 
 
