@@ -22,3 +22,12 @@ dx-build:
 
 dx-run: 
 	dx run nextflow-app --watch -y
+
+mkdocs-build:
+	docker run --rm -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material build
+
+mkdocs-serve:
+	docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+
+mkdocs-clean:
+	rm -rf site
