@@ -1,0 +1,64 @@
+site_name: 'Nextflow DNAnexus xpack'
+site_author: Seqera Labs
+repo_name: xpack-dnanexus
+repo_url: https://github.com/seqeralabs/xpack-dnanexus
+edit_uri: https://github.com/seqeralabs/xpack-dnanexus/tree/master/docs
+
+site_dir: public
+
+plugins:
+  - search:
+      prebuild_index: true
+#   - git-revision-date
+#   - git-revision-date-localized:
+#       fallback_to_build_date: true
+
+theme:
+  language: en
+  name: material
+  custom_dir: overrides
+  palette:
+    scheme: default
+    primary: white
+  favicon: _favicons/favicon.ico
+  logo: _logos/nf-tower-icon-black.svg
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+    - admonition
+    - pymdownx.superfences
+    - pymdownx.highlight:
+        linenums: true
+
+
+extra:
+  generator: false
+  homepage: /
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:support@seqera.io
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/seqeralabs
+    - icon: fontawesome/brands/github
+      link: https://github.com/seqeralabs
+  version:
+    provider: mike
+    default: stable
+
+
+nav:
+    - 'Getting started': 'getting_started.md'
+    - 'Launch your first pipeline': 'launch_your_first_pipeline.md'
+    - 'Use the CLI': 'use_the_cli.md'
+    - 'Use private Git repository': 'use_private_git_repository.md'
+    - 'Create a custom pipeline bundle': 'create_a_custom_pipeline_bundle.md'
+
+
+copyright: Copyright &copy; 2021 Seqera Labs, S.L.
